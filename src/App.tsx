@@ -11,11 +11,7 @@ function App() {
         </p>
       </section>
       <section className="flex h-[150vh] flex-col items-center justify-center">
-        <AnimatedText
-          once
-          text="Hello you"
-          className="text-[200px]"
-        />
+        <AnimatedText once text="Hello you" className="text-[200px]" />
       </section>
 
       <section className="flex min-h-[150vh] flex-col items-center justify-center">
@@ -101,12 +97,13 @@ export const AnimatedText = ({
         }}
         aria-hidden
       >
-        {textArray.map((line) => (
-          <span className="block">
-            {line.split(" ").map((word) => (
-              <span className="inline-block">
-                {word.split("").map((char) => (
+        {textArray.map((line, lineIndex) => (
+          <span className="block" key={`${line}-${lineIndex}`}>
+            {line.split(" ").map((word, wordIndex) => (
+              <span className="inline-block" key={`${word}-${wordIndex}`}>
+                {word.split("").map((char, charIndex) => (
                   <motion.span
+                    key={`${char}-${charIndex}`}
                     className="inline-block"
                     variants={defaultAnimations}
                   >
