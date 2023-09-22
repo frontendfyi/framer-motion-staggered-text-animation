@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 
 function App() {
   return (
-    <main className="mx-auto mt-14 max-w-6xl text-white">
+    <main className="mx-auto mt-14 max-w-6xl bg-gray-900 text-white">
       <section className="h-screen">
         <p className="text-4xl md:text-[200px] md:leading-relaxed">
           Scroll down...
