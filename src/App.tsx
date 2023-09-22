@@ -12,6 +12,7 @@ function App() {
       </section>
       <section className="flex h-[150vh] flex-col items-center justify-center">
         <AnimatedText once text="Hello you" className="text-[200px]" />
+        Scroll down more...
       </section>
 
       <section className="flex min-h-[150vh] flex-col items-center justify-center">
