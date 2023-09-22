@@ -4,28 +4,30 @@ import { useEffect, useRef } from "react";
 
 function App() {
   return (
-    <main className="mx-auto mt-14 max-w-6xl bg-gray-900 text-white">
-      <section className="h-screen">
-        <p className="text-4xl md:text-[200px] md:leading-relaxed">
-          Scroll down...
-        </p>
-      </section>
-      <section className="flex h-[150vh] flex-col items-center justify-center">
-        <AnimatedText once text="Hello you" className="text-[200px]" />
-        Scroll down more...
-      </section>
+    <main className="bg-gray-900">
+      <div className="mx-auto mt-14 max-w-6xl text-white">
+        <section className="h-screen">
+          <p className="text-4xl md:text-[200px] md:leading-relaxed">
+            Scroll down...
+          </p>
+        </section>
+        <section className="flex h-[150vh] flex-col items-center justify-center">
+          <AnimatedText once text="Hello you" className="text-[200px]" />
+          Scroll down more...
+        </section>
 
-      <section className="flex min-h-[150vh] flex-col items-center justify-center">
-        <AnimatedText
-          text={[
-            "This is written on",
-            "a typing machine. Tick tick",
-            "tick tack tack...",
-          ]}
-          className="text-4xl"
-          repeatDelay={10000}
-        />
-      </section>
+        <section className="flex min-h-[150vh] flex-col items-center justify-center">
+          <AnimatedText
+            text={[
+              "This is written on",
+              "a typing machine. Tick tick",
+              "tick tack tack...",
+            ]}
+            className="text-4xl"
+            repeatDelay={10000}
+          />
+        </section>
+      </div>
     </main>
   );
 }
