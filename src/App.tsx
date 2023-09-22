@@ -1,11 +1,11 @@
 import "./index.css";
-import { motion, useInView, useAnimation } from "framer-motion";
+import { motion, useInView, useAnimation, Variant } from "framer-motion";
 import { useEffect, useRef } from "react";
 
 function App() {
   return (
     <main className="bg-gray-900">
-      <div className="mx-auto mt-14 max-w-6xl text-white">
+      <div className="mx-auto max-w-6xl pt-14 text-white">
         <section className="h-screen">
           <p className="text-4xl md:text-[200px] md:leading-relaxed">
             Scroll down...
@@ -38,6 +38,10 @@ type AnimatedTextProps = {
   className?: string;
   once?: boolean;
   repeatDelay?: number;
+  animation?: {
+    hidden: Variant;
+    visible: Variant;
+  };
 };
 
 const defaultAnimations = {
@@ -60,6 +64,7 @@ export const AnimatedText = ({
   className,
   once,
   repeatDelay,
+  animation = defaultAnimations,
 }: AnimatedTextProps) => {
   const controls = useAnimation();
   const textArray = Array.isArray(text) ? text : [text];
@@ -108,7 +113,7 @@ export const AnimatedText = ({
                   <motion.span
                     key={`${char}-${charIndex}`}
                     className="inline-block"
-                    variants={defaultAnimations}
+                    variants={animation}
                   >
                     {char}
                   </motion.span>
