@@ -12,12 +12,18 @@ function App() {
           </p>
         </section>
         <section className="flex h-[150vh] flex-col items-center justify-center">
-          <AnimatedText once text="Hello you" className="text-[200px]" />
+          <AnimatedText
+            once
+            text="Hello you"
+            el="h1"
+            className="text-[200px]"
+          />
           Scroll down more...
         </section>
 
         <section className="flex min-h-[150vh] flex-col items-center justify-center">
           <AnimatedText
+            el="h2"
             text={[
               "This is written on",
               "a typing machine. Tick tick",
@@ -94,7 +100,7 @@ export const AnimatedText = ({
 
   return (
     <Wrapper className={className}>
-      <span className="sr-only">{text}</span>
+      <span className="sr-only">{textArray.join(" ")}</span>
       <motion.span
         ref={ref}
         initial="hidden"
